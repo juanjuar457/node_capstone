@@ -2,27 +2,42 @@
 <html>
 <head>
 	<title>Capstone 2, Form page</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">  
+	<!-- kip boostrap must go before our css -->
 	<link rel="stylesheet" type="text/css" href="main.css">
-	<script type="text/javascript" href="app.js"></script>
-</head>
 <body class="login_body">
-
+<div class="container text-center">
 <h1 id="form_head">Order For Later </h1> 
-
-<div class="white_box">
-	<form>
-		<label id="login">Please Login</label>
-		<input type="form" name="user">Guest Password
-		<input type="form" class="admin_submit">Admin Password
-		<button class="submit_button">Submit</button>
-	</form>	
+		<div class="row">
+			<div class="panel panel-default col-md-6 col-md-offset-3">
+			<ul class="nav nav-tabs">
+			  <li role="presentation" class="active"><a href="#">Guest Login</a></li>
+			  <li role="presentation"><a href="admin.html">Admin Login</a></li>
+			</ul>
+				<form class="form-inline">
+				<div class="form-group">
+					<span>Guest Password</span><input type="form" name="user" class="form-control">
+				</div>
+			<!-- 	<div class="form-group">
+					<span>Admin Password</span><input type="form" name="user" class="form-control">
+				</div> -->
+				<div class="form-group">
+					<button id="login_admin" type="button" class="btn btn-default">Submit</button>
+				</div>
+				
+				</form>	
+			</div>
+		</div>
 </div>
-
 <a href="main_page.html">Link to main order page</a>
 <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
-<script type="text/javascript" href="app.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
+
+
+<!-- guest === 4 digit id of user and company name
+admin === admins user id and password   -->

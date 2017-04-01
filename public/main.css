@@ -1,12 +1,21 @@
 * {
 	box-sizing: border-box;
-	color: white;
 	font-weight: 5px; 
 	font-size: 25px;
 }
 
+form label {
+	color: black;
+	display: inline-block;
+	width: 200px;
+}
+
 form .order_cells {
 	display: inline-block;
+}
+
+h1 {
+	color: white;
 }
 
 
@@ -18,16 +27,7 @@ form .order_cells {
 	padding: 20px;
 }
 
-.white_box {
-	height: 300px;
-	width: 400px;
-	background-color: silver;
-	margin: auto;
-	text-align: : center;	
-	padding: 50px;
-	display: block;
 
-}
 
 .submit_button {
 	margin: auto;
@@ -41,28 +41,19 @@ form .order_cells {
 	text-align: center;
 }
 
-button {
-	display: block;
-	background-color: #0D254C;
-	border-radius: 10%;
-	text-align: right;
-	margin: 10px;
-}
-
-input {
-	background-color: #808080;
-	color: white;
-	display: inline-block;
-	text-align: center;
-	margin: auto;
-}
 
 body {
 	background-color: #0D254C;
 
 }
 
+
+.mock_form {
+	color: white;
+}
+
 .example_entry {
+	color: white;
 	max-width: auto; 
 	border-style: solid;
 	border-color: white;

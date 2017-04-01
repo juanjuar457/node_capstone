@@ -1,3 +1,9 @@
-{
-	""
+{	
+	"vendor": "",
+	"quantity:" : 0,
+	"product_name": "",
+	"catalog_number": 0,
+	"unit_size": 0,
 }
+
+
