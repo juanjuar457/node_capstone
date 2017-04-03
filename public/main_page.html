@@ -12,48 +12,48 @@
 		       <form class="col-lg-12 form-inline">
 
 		          <div class="input-group">
-		            <input type="text" class="form-control form-inline" placeholder="Enter Vendor">
-			            <span class="input-group-btn">
-			              	<button class="btn btn-primary" type="button">Add Item</button>
-			            </span>
+		            <input id="vendor" type="text" class="form-control form-inline" placeholder="Enter Vendor">
+			           
 		          </div><!-- /input-group -->
 
 		              <div class="input-group">
 		            <input type="text" class="form-control" placeholder="Enter Quantity">
-		            <span class="input-group-btn">
-		              <button class="btn btn-primary" type="button">Add Item</button>
-		            </span>
+		          
 		          </div><!-- /input-group -->
 
 		              <div class="input-group">
 		            <input type="text" class="form-control" placeholder="Enter Product Name">
-		            <span class="input-group-btn">
-		              <button class="btn btn-primary" type="button">Add Item</button>
-		            </span>
+		          
 		          </div><!-- /input-group -->
 
 		              <div class="input-group">
 			            <input type="text" class="form-control" placeholder="Enter Catalog Number">
-				            <span class="input-group-btn">
-			              		<button class="btn btn-primary" type="button">Add Item</button>
-			            	</span>
+				           
 		          	  </div><!-- /input-group -->
 		         
-		         <!-- MAKE THIS DROPDOWN!  -->
 		         	    <div class="input-group">
-		            		<input type="text" class="form-control form-inline" placeholder="Enter Unit Size(ML, GM, KG,)">
-			            	<span class="input-group-btn">
-			              			<button class="btn btn-primary" type="button">Add Item</button>
-			            	</span>
+		            		<select id="units" class="form-control">
+
+		            		</select>
 		          		</div><!-- /input-group -->           
 		      </form><!-- /.col-lg-6 -->
 		</div>
 
 		<div class="text-center">
 			<form id="main_submit">
-				<button type="button" class="btn btn-primary btn-lg">Large button</button>
+		<button id="add_material" type="button" class="btn btn-primary btn-lg btn-block">Add Material</button>
 			</form>
 		</div>
+
+	<a href="index.html">back to login</a>
+
+	<!-- example entries -->
+	<div id="requested_materials">
+	<p class="example_entry"> Testosterone Micronized/ ct: 1 / B and B pharma / 1000kg (units) </p>
+	<p class="example_entry"> Testosterone Micronized/ ct: 1 / B and B pharma / 1000kg (units) </p>
+	<p class="example_entry"> Testosterone Micronized/ ct: 1 / B and B pharma / 1000kg (units) </p>
+	<p class="example_entry"> Testosterone Micronized/ ct: 1 / B and B pharma / 1000kg (units) </p>
+	</div>
 
 					<!-- <form class="mock_form">
 					<input type="form" id="vendor">Vendor 
@@ -64,18 +64,11 @@
 					<button type="submit">Add Item</button>
 					<button>Remove Item</button>
 					</form> -->
-						<a href="index.html">back to login</a>
-	<!-- example entries -->
-	<p class="example_entry"> Testosterone Micronized/ ct: 1 / B and B pharma / 1000kg (units) </p>
-	<p class="example_entry"> Testosterone Micronized/ ct: 1 / B and B pharma / 1000kg (units) </p>
-	<p class="example_entry"> Testosterone Micronized/ ct: 1 / B and B pharma / 1000kg (units) </p>
-	<p class="example_entry"> Testosterone Micronized/ ct: 1 / B and B pharma / 1000kg (units) </p>
-
 
 	<script
 	  src="https://code.jquery.com/jquery-3.2.1.min.js"
 	  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 	  crossorigin="anonymous"></script>
-	<script type="text/javascript" href="app.js"></script>
+	<script type="text/javascript" src="app.js"></script>
 	</body>
 </html>
