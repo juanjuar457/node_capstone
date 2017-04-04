@@ -20,7 +20,7 @@ var state = {
 
 }
 
-var mock_added_items = {
+var mock_data = {
 	items_ordered: [
 		{
 			vendor: "",
@@ -33,14 +33,14 @@ var mock_added_items = {
 
 	user: [
 		{
-			id: 9181,
+			id: "9181",
 			name: "Rebecca",	
 			type: 'admin'
 		}, //say admin or guest
 
 		{
-			id: 1189,
-			name: "Dulcemar",
+			id: "1189",
+			name: "Dolcemar",
 			type: 'guest',
 		}
 	],
@@ -52,9 +52,9 @@ var mock_added_items = {
 }; 
 
 //set up conditional to check for password entered client side in the index/admin.html
-function init_index_form () {
-	if()
-}
+// function init_index_form () {
+// 	if()
+// }
 
 
 function  init_main_form () {
@@ -67,12 +67,51 @@ function  init_main_form () {
 
 };
 
-function render_alert_index () {
+//this will be moved, login 1st etc.... don't know where quite yet. 
+init_main_form();
+
+function pass_submit_control () {}//when user hits the submit, depending on what page they are on.
+//how to set that up for diff pages?? just given them the correct id to target it form the js!!! 
+
+//need 1 for admin and 1 for guest! 
+
+//need to use page rederection 
+function check_pass_admin () {} 
+function page_redirection () {} 
+
+init_index();
+
+function init_index () {
+	//event on form submit, go to check pass 
+	$('#login').click(check_pass_guest)
+
 
 }
 
-//this will be moved, login 1st etc.... don't know where quite yet. 
-init_main_form();
+//console log works here! 
+function check_pass_guest (event) {
+
+	event.preventDefault();
+	var inpass = $('#guest').val() //id for input bar on start screen
+	// console.log(inpass)
+	// console.log(mock_data.user[1].id)
+	if (inpass === mock_data.user[1].id) {
+		// $('#input_alert').append('good job!')
+		alert('good job!');
+		window.location.href="main_page.html"
+	} else {
+		alert('u suck!');
+		window.location.href="index.html"
+	};
+
+}
+
+//make alert box if correct or incorrect 
+//use conditional 
+function render_alert_for_Login () {
+
+}
+
 
 //func is like control arm basically middle man for functions listed... 
 function add_material_click (event) {
@@ -110,42 +149,4 @@ function render_material_list () {
 	}
 }
 
-//put together the size and the units glue with css 1 big block...
 
-//NEED TO ADD MOCK DATA HERE AS WELL!!!
-
-//on enter keyboard stroke, or Add item will submit!! 
-
-// console.log('hello');
-// $('.submit_button').click(function () {
-// 	console.log('test');
-// });
-// $('form').submit(function(event) {
-// 	event.preventDefault(); 
-// 	console.log(prog) //no console log??!?
-// 	$('p').html("prog");
-// });
-
-//from thinkful ex on building client with mock data: 
-
-// function getRecentStatusUpdates(callbackFn) {
-// //     setTimeout(function(){ callbackFn(MOCK_STATUS_UPDATES)}, 100);
-// // }
-
-// // this function stays the same when we connect
-// // to real API later
-// function displayStatusUpdates(data) {
-//     for (index in data.statusUpdates) {
-//        $('body').append(
-//         '<p>' + data.statusUpdates[index].text + '</p>');
-//     }
-// }
-
-// // this function can stay the same even when we
-// // are connecting to real API
-// function getAndDisplayStatusUpdates() {
-//     getRecentStatusUpdates(displayStatusUpdates);
-// }
-
-// $(function() {
-//     getAndDisplayStatusUpdates();
