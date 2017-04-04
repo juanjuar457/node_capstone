@@ -66,27 +66,57 @@ function  init_main_form () {
 	$('#add_material').click(add_material_click); 
 
 };
-
 //this will be moved, login 1st etc.... don't know where quite yet. 
 init_main_form();
 
-function pass_submit_control () {}//when user hits the submit, depending on what page they are on.
+//when user hits the submit, depending on what page they are on.
 //how to set that up for diff pages?? just given them the correct id to target it form the js!!! 
-
 //need 1 for admin and 1 for guest! 
-
 //need to use page rederection 
-function check_pass_admin () {} 
-function page_redirection () {} 
 
-init_index();
+(function () {
+	$('#login_admin_btn').click(check_pass_admin);
+	$('#login_btn').click(check_pass_guest); 
+	$('#admin_login_form').hide();
+	$('#admin_tab').find('a').click(toggle_login);
+	$('#guest_tab').find('a').click(toggle_login);
+	//target the li href, check against the text, 
+})(); //iffy
 
-function init_index () {
-	//event on form submit, go to check pass 
-	$('#login').click(check_pass_guest)
+function toggle_login (e) {
+	var tab = $(e.currentTarget).text().toLowerCase();
+	$('#admin_login_form').hide();
+	$('#admin_tab').removeClass('active');
+	$('#guest_login_form').hide();
+	$('#guest_tab').removeClass('active');
 
-
+	if (tab === 'admin login'){
+		$('#admin_login_form').show();
+		$('#admin_tab').addClass('active');
+	} else {
+		$('#guest_login_form').show();
+		$('#guest_tab').addClass('active');
+	}
 }
+
+function check_pass_admin (event) {
+
+	event.preventDefault();
+	var inpass = $('#admin').val()
+	console.log(inpass);
+	if(inpass === mock_data.user[0].id) {
+		
+		alert('Login Correct!');
+		alert('Welcome Admin');
+		window.location.href="main_page.html";
+	}
+	else {
+		alert('Login incorrect! Try again!');
+		window.location.href="admin.html";
+	}
+} 
+
+//need to redo top, not workin!  loop for admin???!
 
 //console log works here! 
 function check_pass_guest (event) {
@@ -96,24 +126,21 @@ function check_pass_guest (event) {
 	// console.log(inpass)
 	// console.log(mock_data.user[1].id)
 	if (inpass === mock_data.user[1].id) {
-		// $('#input_alert').append('good job!')
-		alert('good job!');
+		console.log(mock_data.user[0].id); //this is hitting 9181 
+		alert('Login Correct!');
 		window.location.href="main_page.html"
-	} else {
-		alert('u suck!');
-		window.location.href="index.html"
+	} 
+	else {
+		alert('Login incorrect! Try again!');
+		window.location.href="index.html";
 	};
 
 }
 
 //make alert box if correct or incorrect 
 //use conditional 
-function render_alert_for_Login () {
 
-}
-
-
-//func is like control arm basically middle man for functions listed... 
+//CONTROL ARM HERE 
 function add_material_click (event) {
 	event.preventDefault();
 	add_material(); 
@@ -144,8 +171,8 @@ function render_material_list () {
 	dom.empty(); //flushes out material
 
 	for(i=0; i < state.requested_materials.length; i++){
-		dom.append('<p class="example_entry">'+ state.requested_materials[i].product +'/ count:'+ state.requested_materials[i].quantity + '/' + 
-			state.requested_materials[i].catalog_number + '/'+ state.requested_materials[i].vendor + '/' + state.requested_materials[i].units + '</p>')
+		dom.append('<p class="example_entry">'+ state.requested_materials[i].product +' | count:'+ state.requested_materials[i].quantity + ' | ' + 
+			state.requested_materials[i].catalog_number + ' | '+ state.requested_materials[i].vendor + ' | ' + state.requested_materials[i].units + '</p>')
 	}
 }
 
