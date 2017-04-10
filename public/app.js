@@ -24,10 +24,10 @@ var mock_data = {
 	items_ordered: [
 		{
 			vendor: "",
-			quantity: 0,
+			quantity: "",
 			product_name: "",
-			catalog_number: 0,
-			unit_size: 0,
+			catalog_number: "",
+			unit_size: "",
 		}
 	],
 
@@ -81,7 +81,7 @@ init_main_form();
 	$('#admin_tab').find('a').click(toggle_login);
 	$('#guest_tab').find('a').click(toggle_login);
 	//target the li href, check against the text, 
-})(); //iffy
+})(); 
 
 function toggle_login (e) {
 	var tab = $(e.currentTarget).text().toLowerCase();
