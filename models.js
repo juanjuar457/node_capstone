@@ -10,6 +10,13 @@ const materialSchema = mongoose.schema({
 	unit_size: {type: String, required: true}
 })
 
+const passwordSchema = mongoose.schema({
+	user: {type: String, required: true},
+	password: {type: String, required: true},
+	admin: {tyep: Boolean, required: true} //this makes user bool as well??
+})
+
+
 // note that all instance methods and virtual properties on our
 // schema must be defined *before* we make the call to `.model`.
 const Material = mongoose.model('Material', restaurantSchema);
